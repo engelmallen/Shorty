@@ -1,0 +1,41 @@
+{
+    "users": [
+    {
+      "id": 1,
+      "userName": "Howard Phillips Lovecraft"
+    },
+    {
+      "id": 2,
+      "userName": "Stephen King"
+    },
+    {
+      "id": 3,
+      "userName": "Gabriel Garcia Marquez"
+    },
+    {
+      "id": 4,
+      "userName": "Edgar Allan Poe"
+    },
+    {
+      "id": 5,
+      "userName": "Oscar Wilde"
+    }
+  ],
+  "stories": [
+    {
+      "id": 1,
+      "userId": 1,
+      "storyName": "Tina",
+      "text": "Labore veniam aute eiusmod in in exercitation deserunt et magna. Officia dolor nisi sed incididunt veniam ad est dolore eu excepteur.",
+      "imgUrl": "https://lh3.googleusercontent.com/proxy/j_q64TJhYrmm__xinS_q60-BjGOPLmWhhyvTCxRFJ54NopB4aA8TjSzKt1IJ80siSPo7LGTEWX9h9OlBMtrkWul2hA"
+    }
+  ],
+  "Reviews": [
+    {
+      "id": 1,
+      "userId": 1,
+      "stars": 5,
+      "text": "Awesome horros story, Will wait for more."
+    }
+  ]
+}
