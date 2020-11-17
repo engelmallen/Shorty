@@ -22,12 +22,13 @@ const StoryBody = () =>{
 	}, []);
 
 	return (
-		<div className="StoryBody px-5">
+		<div className="StoryBody container-fluid px-5">
 
-  			<button className="btn-dark" onClick={() => setOpen(true)} value="getStories">getStories</button>
+  			<button className="btn-dark w-100" onClick={() => setOpen(true)} value="getStories">getStories</button>
 			{open && stories.map((a)=>{
 						return 	(	
-							<StoryCard name={a.name} image={a.storyImage} />	
+
+							<StoryCard onClick={() => {alert(a.name)}} name={a.name} image={a.storyImage} />	
 
 								)
 						})}
