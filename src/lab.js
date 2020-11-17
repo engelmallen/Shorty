@@ -17,3 +17,8 @@
 	    </p>
 	  </div>
 	</div>
+
+	useEffect((props) =>{
+	const [open, setOpen] = useState(false);
+	const [stories, setStories] = useState([]);
+});
