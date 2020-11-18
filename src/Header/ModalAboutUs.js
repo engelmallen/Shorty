@@ -2,13 +2,18 @@ import React from "react"
 
 const ModalAboutUs = () =>{
 	let modalStyles={
-
+		zIndex: '1000',
+		border: '3px',
+		marginLeft: '40%'
 	}
 
 	return (
-		<div className="ModalAboutUs d-absolute">
+		<div className="p-5 ModalAboutUs position-absolute bg-white mt-5 border border-dark w-25 text-center" style={modalStyles}>
 			<div>
-				Nulla labore in mollit ut commodo excepteur deserunt dolor nisi ea deserunt elit est dolor ut dolor dolor et mollit elit dolore dolor in in cillum ut non in velit in adipisicing sit in in sunt nulla in ut sunt dolore elit adipisicing dolore proident do elit duis excepteur est pariatur ut sint aute adipisicing do consectetur nulla commodo cillum esse irure qui ad et qui amet ut et ad anim aliquip eu laborum sint quis eiusmod dolor non eiusmod non id eiusmod labore exercitation culpa do dolor velit pariatur laboris exercitation adipisicing tempor est adipisicing dolor ex ex in laborum minim id anim consectetur exercitation veniam elit excepteur ullamco in esse adipisicing anim sint non in adipisicing minim officia id incididunt dolor incididunt pariatur mollit veniam laboris deserunt officia aute laboris esse sed ullamco nulla nisi incididunt velit est commodo ea qui in consequat ea.
+			<h1>We are stories</h1>
+				<h4> 
+					Velit cupidatat nulla minim quis in minim commodo sit proident labore id mollit cillum minim aliqua excepteur ut elit cupidatat irure exercitation irure ex excepteur in esse culpa occaecat ad labore labore amet cupidatat exercitation sint deserunt laborum.
+				</h4>
 			</div>
 		</div>
 		)

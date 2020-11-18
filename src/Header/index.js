@@ -13,14 +13,10 @@ const [wasClicked,setWasClicked] = useState(false);
 
 	return (
 			<div className="Header text-center mb-2">
-				<BtnAboutUs onclick={() => setWasClicked(true)}/>
-				<div>
-					{wasClicked && 
-						return(
-								() => {<BtnAboutUs/>}
-							)
+				<BtnAboutUs onClick={() => setWasClicked(true)}/>
+					{wasClicked && <ModalAboutUs/>
 					}
-				</div>
+
 				<div className="Logo">  </div>
 				<Menu/>
 			</div>
