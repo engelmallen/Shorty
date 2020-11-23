@@ -3,9 +3,9 @@ import "./index.css";
 import StoryStars from "./StoryStars";
 
 const storyCard = (props) =>{
-const alley = props.image
+const curImage = props.image
 	const divStyle = {
-		background: 'url(' + alley + ') black no-repeat center',
+		background: 'url(' + curImage + ') black no-repeat center',
 		backgroundSize:'contain',
 		width: '24%',
 		height: '300px',

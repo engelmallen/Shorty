@@ -1,18 +1,18 @@
-import React, {useState} from "react"
+import React, { useState } from "react";
+import ModalAboutUs from "./ModalAboutUs";
+import BtnClose from "./BtnClose";
+
 
 const BtnAboutUs = (props) => {
-	const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
-	const openModal = () =>{
-		
-	}
-
-	return (
-		<div className=" BtnAboutUs text-center">
-		
-			<h2 > About Us </h2>
-		</div>
-		)
-}
-
-export default BtnAboutUs
+  return (
+    <div>
+      <div className=" BtnAboutUs text-center" onClick={() => setOpen(!open)}>
+        <h2> About Us </h2>
+      </div>
+      {open && <ModalAboutUs changeState={()=> setOpen(false)}/>}
+    </div>
+  );
+};
+export default BtnAboutUs;

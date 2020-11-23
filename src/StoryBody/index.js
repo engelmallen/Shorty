@@ -27,9 +27,7 @@ const StoryBody = () =>{
   			<button className="btn-dark w-100" onClick={() => setOpen(true)} value="getStories">getStories</button>
 			{open && stories.map((a)=>{
 						return 	(	
-
 							<StoryCard onClick={() => {alert(a.name)}} name={a.name} image={a.storyImage} />	
-
 								)
 						})}
 		</div>
