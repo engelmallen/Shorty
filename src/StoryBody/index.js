@@ -18,16 +18,23 @@ const StoryBody = () =>{
 			setStories(stories);
 			setUsers(users);
 		}
+
 		getStories();
 	}, []);
 
 	return (
 		<div className="StoryBody container-fluid px-5">
 
-  			<button className="btn-dark w-100" onClick={() => setOpen(true)} value="getStories">getStories</button>
-			{open && stories.map((a)=>{
+  			<button className="btn-dark w-100" onClick={() => setOpen(!open)} value="getStories">getStories</button>
+			{open && stories.map((s)=>{
 						return 	(	
-							<StoryCard onClick={() => {alert(a.name)}} name={a.name} image={a.storyImage} />	
+							<StoryCard name={s.name} image={s.storyImage} author={
+								users.filter((u)=>{ 
+									return s.userId == u.id;
+									return u.name;
+								}
+									)
+							} />	
 								)
 						})}
 		</div>
