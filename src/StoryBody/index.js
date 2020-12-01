@@ -28,13 +28,15 @@ const StoryBody = () =>{
   			<button className="btn-dark w-100" onClick={() => setOpen(!open)} value="getStories">getStories</button>
 			{open && stories.map((s)=>{
 						return 	(	
-							<StoryCard name={s.name} image={s.storyImage} author={
-								users.filter((u)=>{ 
-									return s.userId == u.id;
-									return u.name;
-								}
-									)
-							} />	
+							<StoryCard 	name={s.name} 
+										image={s.storyImage} 
+										author={
+							              		users.find((u) => {
+							                	return s.userId == u.id;
+							              }).userName
+							            } 
+							            genre={s.genre}
+									/>	
 								)
 						})}
 		</div>

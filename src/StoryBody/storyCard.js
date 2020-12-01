@@ -13,8 +13,9 @@ const curImage = props.image
 	};
 	return (
 			<div className="storyCard p-3 m-2 float-left pt-4 text-warning font-weight-bold" style={divStyle}>
-			<div className="h3"> {props.name} </div>
-			<div className="h4"> {props.author} </div>
+			<div className="h3 font-weight-bold border-bottom pb-3"> {props.name} </div>
+			<div className="h4 font-weight-bold"> {props.author} </div>
+			<div className="h4 font-weight-bold"> {props.genre} </div>
 				<div>
 					{/*<img src={alley} width="100%"/>	*/}
 					</div>
