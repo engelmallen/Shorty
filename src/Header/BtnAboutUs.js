@@ -8,7 +8,7 @@ const BtnAboutUs = (props) => {
 
   return (
     <div>
-      <div className=" BtnAboutUs text-center" onClick={() => setOpen(!open)}>
+      <div className=" BtnAboutUs text-center" onClick={() => setOpen(true)}>
         <h2> About Us </h2>
       </div>
       {open && <ModalAboutUs changeState={()=> setOpen(false)}/>}

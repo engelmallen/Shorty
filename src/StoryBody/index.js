@@ -1,11 +1,16 @@
 import React, {useState, useEffect} from "react";
 import StoryCard from "./storyCard";
+import BtnAllStories from "./buttons/BtnAllStories";
+import BtnGenre from "./buttons/BtnGenre";
+
 import "./index.css";
 
 
 const StoryBody = () =>{
 
-	const [open, setOpen] = useState(false)
+
+	const [allStories, setallStories] = useState(false)
+	const [genres, setGenres] = useState(false)
 	const [stories, setStories] = useState([])
 	const [users, setUsers] = useState([])
 
@@ -24,14 +29,24 @@ const StoryBody = () =>{
 
 	return (
 		<div className="StoryBody container-fluid px-5">
-
-  			<button className="btn-dark w-100" onClick={() => setOpen(!open)} value="getStories">getStories</button>
-			{open && stories.map((s)=>{
+			<BtnAllStories btnName ={"Get All Stories"} allstories={() => setallStories(!allStories)}/>
+			<BtnAllStories btnName ={"Genres"} allstories={() => setGenres(!genres)}/>
+			{genres && stories.map((s)=>{
 						return 	(	
-							<StoryCard 	name={s.name} 
+							<BtnGenre genre={s.genre}
+									/>	
+								)
+						})}
+			<BtnAllStories btnName ={"My Stories"} allstories={() => setallStories(!allStories)}/>
+
+
+
+			{allStories && stories.map((s)=>{
+						return 	(	
+							<StoryCard 	name={s.name}  
 										image={s.storyImage} 
 										author={
-							              		users.find((u) => {
+							              	users.find((u) => {
 							                	return s.userId == u.id;
 							              }).userName
 							            } 
