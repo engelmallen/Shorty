@@ -7,12 +7,19 @@ import "./index.css";
 
 
 const StoryBody = () =>{
+	const genreList = [
+		"Horror",
+		"Comedy",
+		"Slice of Life",
+		"Drama"
+	]
 
-
-	const [allStories, setallStories] = useState(false)
-	const [genres, setGenres] = useState(false)
+	const [allStories, setAllStories] = useState(false)
+	const [filterStories, setFilterStories] = useState(false)
+	const [genres, setgenres] = useState(false)
 	const [stories, setStories] = useState([])
 	const [users, setUsers] = useState([])
+	const [curGenre, setCurGenre] = useState("")
 
 	useEffect(() => {
 		const getStories = async () => {
@@ -29,15 +36,17 @@ const StoryBody = () =>{
 
 	return (
 		<div className="StoryBody container-fluid px-5">
-			<BtnAllStories btnName ={"Get All Stories"} allstories={() => setallStories(!allStories)}/>
-			<BtnAllStories btnName ={"Genres"} allstories={() => setGenres(!genres)}/>
-			{genres && stories.map((s)=>{
-						return 	(	
-							<BtnGenre genre={s.genre}
-									/>	
-								)
-						})}
-			<BtnAllStories btnName ={"My Stories"} allstories={() => setallStories(!allStories)}/>
+			<BtnAllStories btnName ={"Get All Stories"} allstories={() => setAllStories(!allStories)}/>
+			<BtnAllStories btnName ={"Genres"} allstories={() => setgenres(true)}/>
+			{genres && genreList.map((gl)=>{
+				return (<BtnGenre name={gl} criteria={gl} filterStories={
+					() => {
+						setCurGenre(gl)
+						setFilterStories(!filterStories)}} />)
+			})}
+
+				
+			<BtnAllStories btnName ={"My Stories"} allstories={() => setAllStories(!allStories)}/>
 
 
 
@@ -54,6 +63,22 @@ const StoryBody = () =>{
 									/>	
 								)
 						})}
+			{filterStories && stories.map((s)=>{ if (s.genre === curGenre)
+						{return 	(	
+													<StoryCard 	name={s.name}  
+																image={s.storyImage} 
+																author={
+													              	users.find((u) => {
+													                	return s.userId == u.id;
+													              }).userName
+													            } 
+													            genre={s.genre}
+															/>	
+														)}
+						})
+
+
+		}
 		</div>
 	)
 }

@@ -1,13 +1,13 @@
 import React from "react"
 
 const BtnGenre = (props) =>{
+	return (	
 	<div>
-	return(
-			<button className=" BtnGenre btn-light">
-				{props.genre}
+			<button className=" BtnGenre btn-light w-100" onClick={()=>props.filterStories()} criteria={props.criteria}>
+				{props.name}
 			</button>
+	</div>		
 		)
-	</div>
 }
 
 export default BtnGenre
