@@ -15,7 +15,7 @@ const StoryBody = () =>{
 	]
 
 	const [allStories, setAllStories] = useState(false)
-	const [filterStories, setFilterStories] = useState(false)
+	const [filterStories, setFilterStories] = useState("")
 	const [genres, setgenres] = useState(false)
 	const [stories, setStories] = useState([])
 	const [users, setUsers] = useState([])
@@ -36,17 +36,18 @@ const StoryBody = () =>{
 
 	return (
 		<div className="StoryBody container-fluid px-5">
-			<BtnAllStories btnName ={"Get All Stories"} allstories={() => setAllStories(!allStories)}/>
-			<BtnAllStories btnName ={"Genres"} allstories={() => setgenres(true)}/>
+{/*			<BtnAllStories btnName={"Get All Stories"} btnCriteria={""} allstories={() => setAllStories(!allStories)}/>*/}
+			<BtnAllStories btnName={"Get All Stories"} allstories={() => setAllStories(true) }/>
+			<BtnAllStories btnName={"Genres"} allstories={() => setgenres(!genres)}/>
 			{genres && genreList.map((gl)=>{
-				return (<BtnGenre name={gl} criteria={gl} filterStories={
+				return (<BtnGenre name={gl} criteria={gl} allstories={()=>setAllStories(false)} filterStories={
 					() => {
 						setCurGenre(gl)
-						setFilterStories(!filterStories)}} />)
+						setFilterStories(gl)}} />)
 			})}
 
 				
-			<BtnAllStories btnName ={"My Stories"} allstories={() => setAllStories(!allStories)}/>
+			<BtnAllStories btnName ={"My Stories"} allstories={() => setAllStories(!allStories) }/>
 
 
 
@@ -63,19 +64,21 @@ const StoryBody = () =>{
 									/>	
 								)
 						})}
-			{filterStories && stories.map((s)=>{ if (s.genre === curGenre)
-						{return 	(	
-													<StoryCard 	name={s.name}  
-																image={s.storyImage} 
-																author={
-													              	users.find((u) => {
-													                	return s.userId == u.id;
-													              }).userName
-													            } 
-													            genre={s.genre}
-															/>	
-														)}
+			{filterStories && stories.map((s)=>{ 
+
+				if (s.genre === curGenre)
+						{return 	(<StoryCard 	
+										name={s.name}  
+										image={s.storyImage} 
+										author={
+										users.find((u) => {
+											return s.userId == u.id;
+											}).userName
+										} 
+										genre={s.genre}/>	
+									)}
 						})
+					
 
 
 		}

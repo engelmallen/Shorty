@@ -22,3 +22,21 @@
 	const [open, setOpen] = useState(false);
 	const [stories, setStories] = useState([]);
 });
+
+// filteredStories
+{filterStories && stories.map((s)=>{ 
+
+				if (s.genre === curGenre)
+						{return 	(	
+													<StoryCard 	name={s.name}  
+																image={s.storyImage} 
+																author={
+													              	users.find((u) => {
+													                	return s.userId == u.id;
+													              }).userName
+													            } 
+													            genre={s.genre}
+															/>	
+														)}
+					else {}
+						})
