@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from "react";
-import StoryCard from "./storyCard";
+import React, { useState, useEffect } from "react";
+import StoryCard from "./StoryCard";
 import BtnAllStories from "./buttons/BtnAllStories";
 import BtnGenre from "./buttons/BtnGenre";
+import StoryModal from "./StoryModal";
 
 import "./index.css";
 
@@ -14,12 +15,14 @@ const StoryBody = () =>{
 		"Drama"
 	]
 
-	const [allStories, setAllStories] = useState(false)
-	const [filterStories, setFilterStories] = useState("")
-	const [genres, setgenres] = useState(false)
-	const [stories, setStories] = useState([])
-	const [users, setUsers] = useState([])
-	const [curGenre, setCurGenre] = useState("")
+	const [allStories, setAllStories] = useState(false);
+	const [filterStories, setFilterStories] = useState("");
+	const [genres, setgenres] = useState(false);
+	const [getMyStory, setGetMyStory] = useState(false);
+
+	const [stories, setStories] = useState([]);
+	const [users, setUsers] = useState([]);
+	const [curGenre, setCurGenre] = useState("");
 
 	useEffect(() => {
 		const getStories = async () => {
@@ -36,7 +39,6 @@ const StoryBody = () =>{
 
 	return (
 		<div className="StoryBody container-fluid px-5">
-{/*			<BtnAllStories btnName={"Get All Stories"} btnCriteria={""} allstories={() => setAllStories(!allStories)}/>*/}
 			<BtnAllStories btnName={"Get All Stories"} allstories={() => setAllStories(true) }/>
 			<BtnAllStories btnName={"Genres"} allstories={() => setgenres(!genres)}/>
 			{genres && genreList.map((gl)=>{
@@ -47,7 +49,7 @@ const StoryBody = () =>{
 			})}
 
 				
-			<BtnAllStories btnName ={"My Stories"} allstories={() => setAllStories(!allStories) }/>
+			<BtnAllStories btnName ={"My Stories"} allstories={()=>{}}/> 
 
 
 
@@ -61,9 +63,12 @@ const StoryBody = () =>{
 							              }).userName
 							            } 
 							            genre={s.genre}
+							            text={s.text}
+							            action={()=>setGetMyStory(true)}
 									/>	
 								)
 						})}
+
 			{filterStories && stories.map((s)=>{ 
 
 				if (s.genre === curGenre)
@@ -75,13 +80,23 @@ const StoryBody = () =>{
 											return s.userId == u.id;
 											}).userName
 										} 
-										genre={s.genre}/>	
+										genre={s.genre}
+										text={s.text}
+							            action={()=>setGetMyStory(true)}
+							            />	
 									)}
 						})
 					
 
 
 		}
+
+{/*		{getMyStory && stories.find((f)=>{
+			return f.id === 
+			<StoryModal/>
+		})}*/}
+
+
 		</div>
 	)
 }
