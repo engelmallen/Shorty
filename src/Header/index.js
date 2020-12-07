@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <div className="Header text-center mb-2">
       <BtnAboutUs />
-      <div className="Logo"> </div>
+      <div className="Logo">  </div>
       <Menu />
     </div>
   );
