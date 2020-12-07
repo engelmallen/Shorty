@@ -7,7 +7,7 @@ import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-   <Router> <App path="/" /> </Router>
+   <Router> <App path="/stories" /> </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
