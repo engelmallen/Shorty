@@ -77,7 +77,7 @@
       "userId": 2,
       "storyId": 2,
       "stars": 5,
-      "text": "WERE IS THE REST!!!!!!"
+      "text": "WERE IS THE REST???!!!!!!"
     },
     {
       "id": 7,
@@ -116,6 +116,13 @@
     {
       "id": 12,
       "userId": 2,
+      "storyId": 2,
+      "stars": 1,
+      "text": "I wish I could give 0 stars"
+    },
+    {
+      "id": 13,
+      "userId": 1,
       "storyId": 2,
       "stars": 1,
       "text": "I wish I could give 0 stars"

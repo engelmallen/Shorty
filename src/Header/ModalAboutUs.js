@@ -17,6 +17,10 @@ const ModalAboutUs = (props) =>{
 				<h4> 
 					Velit cupidatat nulla minim quis in minim commodo sit proident labore id mollit cillum minim aliqua excepteur ut elit cupidatat irure exercitation irure ex excepteur in esse culpa occaecat ad labore labore amet cupidatat exercitation sint deserunt laborum.
 				</h4>
+
+				<form action="">
+				</form>
+
 			</div>
 		</div>
 		)
