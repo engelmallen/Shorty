@@ -8,6 +8,23 @@ const Story = (props) =>{
 	const  [reviews, setReviews] = useState([]);
 	const  [users, setUsers] = useState([]);
 	const { register, handleSubmit } = useForm();
+	const onSubmit = async (formData) => {
+		const parsedReview = {
+			...formData,
+			stars: parseInt(formData.stars)
+		}
+
+		const response = fetch(`http://localhost:3000/stories/${props.storyId}/reviews`,{
+			method:"POST",
+			body: JSON.stringify(parsedReview),
+				headers:{
+					"Content-Type": "application/json",
+				},
+				
+		});
+			const createdReview = await response.json();
+			setReviews([...reviews, createdReview])
+	};
 
 	useEffect(async () => {
 		const getStory = async () => {
@@ -47,12 +64,12 @@ const Story = (props) =>{
 			<div className="h6">{story.text}</div>
 			<div className="reviews mt-5 bg-dark text-light">
 			
-			<form className="p-3 mb-2">
+			<form onSubmit={handleSubmit(onSubmit)} className="p-3 mb-2">
 				<label htmlFor="">Review:</label>
-				<input type="text" placeholder="Write review..." className="w-100 mb-2"/>
+				<input name="text" ref={register} type="text" placeholder="Write review..." className="w-100 mb-2"/>
 				<label htmlFor="" className="w-100">Rate:</label>
-				<input type="number" min="1" max="5" className="w-25"/>
-				<button type="submit" name="submit" className="btn-success">Summit Review</button>
+				<input name="stars" ref={register} type="number" min="1" max="5" className="w-25"/>
+				<button  type="submit" className="btn-success">Summit Review</button>
 			</form>
 
 			<div className="w-100 bg-light text-dark px-2 pt-2 pb-1">Shorters Reviews:</div>
