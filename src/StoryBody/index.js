@@ -6,7 +6,7 @@ import BtnGenre from "./buttons/BtnGenre";
 import StoryModal from "./StoryModal";
 
 import "./index.css";
-
+ 
 
 const StoryBody = () =>{
 	const genreList = [
