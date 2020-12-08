@@ -14,17 +14,17 @@ const Story = (props) =>{
 			stars: parseInt(formData.stars)
 		}
 
-		const response = fetch(`http://localhost:3000/stories/${props.storyId}/reviews`,{
+		const submitResponse = fetch(`http://localhost:3000/stories/${props.storyId}/reviews`,{
 			method:"POST",
 			body: JSON.stringify(parsedReview),
 				headers:{
 					"Content-Type": "application/json",
 				},
-				
-		});
-			const createdReview = await response.json();
+
+			});
+			const createdReview = await submitResponse.json();
 			setReviews([...reviews, createdReview])
-	};
+		};
 
 	useEffect(async () => {
 		const getStory = async () => {

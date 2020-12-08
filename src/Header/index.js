@@ -9,10 +9,8 @@ import BtnAddStory from "./BtnAddStory"
 const Header = () => {
   return (
     <div className="Header text-center mb-2">
-      <BtnAboutUs />
-      <div className="Logo"> </div>
+{/*      <BtnAboutUs />*/}
       <BtnAddStory/>
-      <Menu />
     </div>
   );
 };

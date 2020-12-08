@@ -1,4 +1,6 @@
-import React from "react"
+import React, {useState, useEffect} from "react";
+import { useForm } from "react-hook-form";
+
 
 const ModalAboutUs = (props) =>{
 	let modalStyles={
@@ -6,6 +8,17 @@ const ModalAboutUs = (props) =>{
 		border: '3px',
 		marginLeft: '40%'
 	}
+
+	const { register, handleSubmit } = useForm();
+
+
+
+
+
+
+
+
+
 
 	return (
 		
@@ -18,8 +31,14 @@ const ModalAboutUs = (props) =>{
 					Velit cupidatat nulla minim quis in minim commodo sit proident labore id mollit cillum minim aliqua excepteur ut elit cupidatat irure exercitation irure ex excepteur in esse culpa occaecat ad labore labore amet cupidatat exercitation sint deserunt laborum.
 				</h4>
 
-				<form action="">
-				</form>
+			<form className="p-3 mb-2">
+				<label htmlFor="">Story Name:</label>
+				<input name="name"/>
+				<label htmlFor="">Genre</label>
+				<input name="name"/>
+				<label htmlFor="">Tell your Story:</label>
+				<input name="name"/>
+			</form>
 
 			</div>
 		</div>
