@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import StoryCard from "./StoryCard";
 import BtnAllStories from "./buttons/BtnAllStories";
+import {Link} from "@reach/router";
 import BtnGenre from "./buttons/BtnGenre";
 import StoryModal from "./StoryModal";
 
@@ -16,8 +17,8 @@ const StoryBody = () =>{
 	]
 
 	const [allStories, setAllStories] = useState(false);
-	const [filterStories, setFilterStories] = useState("");
-	const [genres, setgenres] = useState(false);
+	const [filterStories, setFilterStories] = useState(false);
+	const [genres, setGenres] = useState(false);
 	const [getMyStory, setGetMyStory] = useState(false);
 
 	const [stories, setStories] = useState([]);
@@ -39,13 +40,19 @@ const StoryBody = () =>{
 
 	return (
 		<div className="StoryBody container-fluid px-5">
-			<BtnAllStories btnName={"Get All Stories"} allstories={() => setAllStories(true) }/>
-			<BtnAllStories btnName={"Genres"} allstories={() => setgenres(!genres)}/>
+			<BtnAllStories 	btnName={"Get All Stories"} 
+							allstories={() => 	setAllStories(!allStories)} 
+							filterStories={() =>{	setCurGenre("")
+													setFilterStories(false)
+														}} />
+
+			<BtnAllStories btnName={"Genres"} allstories={() => setGenres(!genres)}/>
+
 			{genres && genreList.map((gl)=>{
 				return (<BtnGenre name={gl} criteria={gl} allstories={()=>setAllStories(false)} filterStories={
 					() => {
 						setCurGenre(gl)
-						setFilterStories(gl)}} />)
+						setFilterStories(!filterStories)}} />)
 			})}
 
 				
@@ -55,7 +62,9 @@ const StoryBody = () =>{
 
 			{allStories && stories.map((s)=>{
 						return 	(	
-							<StoryCard 	name={s.name}  
+							<StoryCard 	
+										name={s.name}  
+										id={s.id}
 										image={s.storyImage} 
 										author={
 							              	users.find((u) => {
@@ -70,10 +79,10 @@ const StoryBody = () =>{
 						})}
 
 			{filterStories && stories.map((s)=>{ 
-
 				if (s.genre === curGenre)
 						{return 	(<StoryCard 	
 										name={s.name}  
+										id={s.id}
 										image={s.storyImage} 
 										author={
 										users.find((u) => {
