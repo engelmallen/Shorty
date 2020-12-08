@@ -5,7 +5,8 @@ const BtnAllStories = (props) =>{
 
   return (
     <div>
-      <button btnCriteria={props.btnCriteria} className="BtnAllStories btn-dark text-center" onClick={()=>{props.allstories()}}>
+      <button btnCriteria={props.btnCriteria} className="BtnAllStories btn-dark text-center" 
+      	onClick={()=>	props.allstories()}>
       {props.btnName}
       </button>
     </div>
