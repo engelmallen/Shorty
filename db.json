@@ -2,66 +2,124 @@
   "users": [
     {
       "id": 1,
-      "userName": "Howard Phillips Lovecraft"
+      "userName": "HPLovecraft",
+      "userFirstName": "Howard Phillips",
+      "UserLastName": "Lovecraft"
     },
     {
       "id": 2,
-      "userName": "Stephen King"
+      "userName": "StephenKing",
+      "userFirstName": "Stephen",
+      "UserLastName": "King"
     },
     {
       "id": 3,
-      "userName": "Gabriel Garcia Marquez"
+      "userName": "Gabo",
+      "userFirstName": "Gabriel",
+      "UserLastName": "Marquez"
     },
     {
       "id": 4,
-      "userName": "Edgar Allan Poe"
+      "userName": "PoeOfficial",
+      "userFirstName": "Edgar Allan",
+      "UserLastName": "Poe"
     },
     {
       "id": 5,
-      "userName": "Oscar Wilde"
+      "userName": "TheWildOscar",
+      "userFirstName": "Oscar",
+      "UserLastName": "Wilde"
     },
         {
       "id": 6,
-      "userName": "Mary Shely"
+      "userName": "DrMaryFrankenstein",
+      "userFirstName": "Mary",
+      "UserLastName": "Shelley"
     }
   ],
   "Reviews": [
     {
       "id": 1,
       "userId": 1,
+      "storyId": 2,
       "stars": 5,
       "text": "Awesome horror story, Will wait for more."
     },
     {
       "id": 2,
       "userId": 1,
+      "storyId": 1,
       "stars": 2,
       "text": "Meh"
     },
     {
       "id": 3,
-      "userId": 1,
+      "userId": 2,
+      "storyId": 3,
       "stars": 5,
       "text": "This was really wholesome :3"
     },
     {
       "id": 4,
-      "userId": 1,
+      "userId": 4,
       "stars": 5,
-      "text": "Awesome horror story, Will wait for more."
+      "text": "WTF did I just read Oo!"
     },
     {
       "id": 5,
-      "userId": 1,
+      "userId": 5,
+      "storyId": 4,
       "stars": 5,
-      "text": "Awesome horror story, Will wait for more."
+      "text": "Well I wasn't trying to sleep anyway"
     },
     {
       "id": 6,
-      "userId": 1,
+      "userId": 2,
+      "storyId": 2,
       "stars": 5,
-      "text": "Awesome horror story, Will wait for more."
-    }    
+      "text": "WERE IS THE REST!!!!!!"
+    },
+    {
+      "id": 7,
+      "userId": 1,
+      "storyId": 2,
+      "stars": 5,
+      "text": "WHAT AN ENDING!!!"
+    },
+    {
+      "id": 8,
+      "userId": 1,
+      "storyId": 1,
+      "stars": 2,
+      "text": "not great not terrible"
+    },
+    {
+      "id": 8,
+      "userId": 2,
+      "storyId": 3,
+      "stars": 5,
+      "text": "this has inspired me"
+    },
+    {
+      "id": 10,
+      "userId": 4,
+      "stars": 5,
+      "text": "Awesome horror story, but that ending was out of this world"
+    },
+    {
+      "id": 11,
+      "userId": 5,
+      "storyId": 4,
+      "stars": 5,
+      "text": "Can't get better"
+    },
+    {
+      "id": 12,
+      "userId": 2,
+      "storyId": 2,
+      "stars": 1,
+      "text": "I wish I could give 0 stars"
+    }        
   ],
   "stories":[
     {
@@ -159,7 +217,7 @@
       "id":10,
       "userId": 4,
       "rating": 0,
-      "name": "Grandma's Chrismas",
+      "name": "Grandma's Christmas",
       "genre":"Horror",
       "text": "Consequat dolor ad veniam ut qui ea enim labore enim excepteur non aute cillum do fugiat elit adipisicing fugiat sed deserunt officia exercitation laborum sunt deserunt elit anim excepteur sed ut quis.",
       "storyImage": "https://img.buzzfeed.com/buzzfeed-static/static/2019-05/9/13/asset/buzzfeed-prod-web-06/sub-buzz-22003-1557421208-1.png",
