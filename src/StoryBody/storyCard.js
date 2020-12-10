@@ -48,7 +48,7 @@ let curImage = props.image
 			</div>
 			<div className="h4 font-weight-bold"> {props.author} </div>
 			<div className="h4 font-weight-bold"> {props.genre} </div>
-			<div className="h6 bg-warning rounded text-dark pb-2 px-2 pt-1 float-right">{props.text}</div>
+			
 				<div>
 					</div>
 					<div className="stars">

@@ -23,7 +23,6 @@
 	const [stories, setStories] = useState([]);
 });
 
-// filteredStories
 {filterStories && stories.map((s)=>{ 
 
 				if (s.genre === curGenre)

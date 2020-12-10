@@ -9,3 +9,9 @@
 	background: light-gray; 
 	width: 100%;
 }
+
+.headImage{
+	height: 200px;
+	background: url('images/imHeader.jpeg') center no-repeat;
+	background-size: cover;
+}

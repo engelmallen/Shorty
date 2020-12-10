@@ -72,7 +72,7 @@ const StoryBody = () =>{
 							              }).userName
 							            } 
 							            genre={s.genre}
-							            text={s.text}
+							            
 							            action={()=>setGetMyStory(true)}
 									/>	
 								)
@@ -90,7 +90,7 @@ const StoryBody = () =>{
 											}).userName
 										} 
 										genre={s.genre}
-										text={s.text}
+										
 							            action={()=>setGetMyStory(true)}
 							            />	
 									)}
