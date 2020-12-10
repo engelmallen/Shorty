@@ -1,9 +1,13 @@
 import React, {useState, useEffect} from "react";
-import {Link} from "@reach/router";
+import "./Story.css"
+import { Link } from "@reach/router";
 import { useForm } from "react-hook-form";
 
 
+
 const Story = (props) =>{
+
+
 	const  [story, setStory] = useState({});
 	const  [reviews, setReviews] = useState([]);
 	const  [users, setUsers] = useState([]);
@@ -56,11 +60,17 @@ const Story = (props) =>{
 		setUsers(users);		
 
 	}, [])
+
+	let curImage = story.storyImage;
+	let divStyle = {
+		background: 'url(' + curImage + ') black no-repeat center',
+	}
+
 	return (
 		<div className="container">
 			<Link to="/" className="btn-dark px-3">Back</Link>
 			<div className="story">
-			<div className="h1 text-center">{story.name}</div>
+			<div className="h1 text-center jumbotron shadow" divStyle={divStyle}> {story.name} </div>
 			<div className="h6">{story.text}</div>
 			<div className="reviews mt-5 bg-dark text-light">
 			

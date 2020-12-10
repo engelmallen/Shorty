@@ -9,6 +9,7 @@ import BtnAddStory from "./BtnAddStory"
 const Header = () => {
   return (
     <div className="Header text-center mb-2">
+    <div className="headImage jumbotron"></div>
 {/*      <BtnAboutUs />*/}
       <BtnAddStory/>
     </div>
